@@ -45,45 +45,33 @@ You should have recieved a copy of the GNU General Public License
 along with this project. Otherwise, see: https://www.gnu.org/licenses/
 """
 
-import xbmc
-import xbmcaddon
-import xbmcgui
+import xbmc, xbmcaddon, xbmcgui, os, re
+
+ADDON = xbmcaddon.Addon()
+addonpath = ADDON.getAddonInfo('path')
 
 if (__name__ == '__main__'):
+    
     print("filter addon working")
 
     allCuts = [
-        {"startTime": 10, "endTime": 12, "category": "gambling", "severity": 1, "action": "mute"},
-        {"startTime": 17, "endTime": 19, "category": "gambling", "severity": 1, "action": "blank"},
-        {"startTime": 24, "endTime": 26, "category": "gambling", "severity": 1, "action": "skip"},
-        {"startTime": 31, "endTime": 33, "category": "gambling", "severity": 1, "action": "fast"},
-        {"startTime": 38, "endTime": 40, "category": "gambling", "severity": 1, "action": "blur"},
-        {"startTime": 45, "endTime": 47, "category": "tedious", "severity": 2, "action": "mute"},
-        {"startTime": 52, "endTime": 54, "category": "tedious", "severity": 2, "action": "blank"},
-        {"startTime": 59, "endTime": 61, "category": "warfare", "severity": 2, "action": "skip"},
-        {"startTime": 66, "endTime": 68, "category": "warfare", "severity": 3, "action": "mute"},
-        {"startTime": 73, "endTime": 75, "category": "warfare", "severity": 3, "action": "blank"},
-        {"startTime": 80, "endTime": 82, "category": "warfare", "severity": 3, "action": "skip"},
-        {"startTime": 87, "endTime": 89, "category": "warfare", "severity": 3, "action": "blank"},
-        {"startTime": 87.5, "endTime": 88.5, "category": "warfare", "severity": 3, "action": "skip"}
+        {"startTime": 2, "endTime": 4, "action": "mute"},
+        {"startTime": 8, "endTime": 10, "action": "blank"},
+        {"startTime": 12, "endTime": 14, "action": "skip"}
     ]
-
-    #print(allCuts[0]["startTime"])
-    #for tag in allCuts:
-    #    print("startTime:", tag["startTime"], "endTime:", tag["endTime"], sep="")
 
     prevAction = ""
 
     # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def doTheFiltering(currentTime):
+    def doTheFiltering():
         startTime = 0
         endTime = 0
         action = ""
         global prevAction
-        #print("currentTime: ", currentTime, sep="")
         for tag in allCuts: # change allCuts to activeCuts
             startTime = tag["startTime"]
             endTime = tag["endTime"]
+            currentTime = xbmc.Player().getTime()
             if currentTime > startTime and currentTime < endTime:
                 action = tag["action"]
                 break
@@ -94,13 +82,13 @@ if (__name__ == '__main__'):
         elif action == "skip":
             xbmc.Player().seekTime(float(endTime) + 0.1)
         elif action == "blank":
-            # figuring out how to implement this
+            #blankScreen.show()
             pass
         elif action == "mute":
             xbmc.executebuiltin('Mute')
         else:
             xbmc.executebuiltin('Mute') # Unmute
-            # un-blank
+            #blankScreen.hide()
         prevAction = action
         return
 
@@ -108,12 +96,11 @@ if (__name__ == '__main__'):
     monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
-        try:
-            if xbmc.Player().isPlaying():
-                xbmc.sleep(10)
-                currentTime = xbmc.Player().getTime()
-                doTheFiltering(currentTime)
-        except:
-            pass
+        #try:
+        if xbmc.getCondVisibility("Player.HasMedia"):
+            xbmc.sleep(10)
+            doTheFiltering()
+        #except:
+            #pass
 
 # How to display Family Movie Act of 2005 notice?
