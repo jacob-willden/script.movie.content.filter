@@ -92,6 +92,30 @@ if (__name__ == '__main__'):
         prevAction = action
         return
 
+    def loadFilterFile():
+        filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
+        fileInput = open(filePath, 'r')
+        fileText = fileInput.read()
+        parseFilterFileText(fileText)
+
+    def fromHMS(timeString):
+        return timeString
+
+    def parseFilterFileText(fileText):
+        # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
+        # https://stackoverflow.com/questions/23620423/parsing-a-srt-file-with-regex
+        result = re.findall("(\d+:\d+:\d+.\d+ --> \d+:\d+:\d+.\d+)\s+(.+)", fileText)
+
+        allCuts = []
+        for myTuple in result:
+            currentCut = {}
+            times = myTuple[0].split(" --> ")
+            currentCut["startTime"] = fromHMS(times[0])
+            currentCut["endTime"] = fromHMS(times[1])
+            currentCut["action"] = myTuple[1]
+            allCuts.append(currentCut)
+
+
     # Derived and modified from the ServiceEntryPoint function in "service.py" from TvSkipIntro
     monitor = xbmc.Monitor()
 
