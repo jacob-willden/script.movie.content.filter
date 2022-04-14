@@ -98,8 +98,17 @@ if (__name__ == '__main__'):
         fileText = fileInput.read()
         parseFilterFileText(fileText)
 
+    # From "videoskip.js"
+    # hour:minute:second string to decimal seconds
     def fromHMS(timeString):
-        return timeString
+        timeString = timeString.replace(",", ".") # in .srt format decimal seconds use a comma
+        time = timeString.split(":")
+        if len(time) == 3: # has hours
+            return (int(time[0]) * 3600) + (int(time[1]) * 60) + float(time[2])
+        elif len(time) == 2: # minutes and seconds
+            return (int(time[0]) * 60) + float(time[1])
+        else: # only seconds
+            return float(time[0])
 
     def parseFilterFileText(fileText):
         # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
@@ -120,11 +129,11 @@ if (__name__ == '__main__'):
     monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
-        #try:
         if xbmc.getCondVisibility("Player.HasMedia"):
             xbmc.sleep(10)
-            doTheFiltering()
-        #except:
-            #pass
+            try:
+                doTheFiltering()
+            except:
+                pass
 
 # How to display Family Movie Act of 2005 notice?
