@@ -70,9 +70,9 @@ if (__name__ == '__main__'):
             return float(time[0])
 
     def parseFilterFileText(fileText):
-        # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions (each time needs a decimal point for now until the regex is improved)
+        # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
         # https://stackoverflow.com/questions/23620423/parsing-a-srt-file-with-regex
-        result = re.findall("(\d+:\d+:\d+.\d+ --> \d+:\d+:\d+.\d+)\s+(.+)", fileText)
+        result = re.findall("(\d+:\d+:\d+.*\d* --> \d+:\d+:\d+.*\d*)\s+(.+)", fileText)
 
         allCuts = []
         for myTuple in result:
