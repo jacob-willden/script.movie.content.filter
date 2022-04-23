@@ -51,53 +51,12 @@ ADDON = xbmcaddon.Addon()
 addonpath = ADDON.getAddonInfo('path')
 
 if (__name__ == '__main__'):
-    
-    print("filter addon working")
+    print("filter addon starting")
 
-    allCuts = [
-        {"startTime": 2, "endTime": 4, "action": "mute"},
-        {"startTime": 8, "endTime": 10, "action": "blank"},
-        {"startTime": 12, "endTime": 14, "action": "skip"}
-    ]
+    allCuts = []
 
     prevAction = ""
-
-    # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def doTheFiltering():
-        startTime = 0
-        endTime = 0
-        action = ""
-        global prevAction
-        for tag in allCuts: # change allCuts to activeCuts
-            startTime = tag["startTime"]
-            endTime = tag["endTime"]
-            currentTime = xbmc.Player().getTime()
-            if currentTime > startTime and currentTime < endTime:
-                action = tag["action"]
-                break
-            # add overlapping filter handling here
-        #print("current action:", action, sep="")
-        if action == prevAction:
-            return
-        elif action == "skip":
-            xbmc.Player().seekTime(float(endTime) + 0.1)
-        elif action == "blank":
-            #blankScreen.show()
-            pass
-        elif action == "mute":
-            xbmc.executebuiltin('Mute')
-        else:
-            xbmc.executebuiltin('Mute') # Unmute
-            #blankScreen.hide()
-        prevAction = action
-        return
-
-    def loadFilterFile():
-        filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
-        fileInput = open(filePath, 'r')
-        fileText = fileInput.read()
-        parseFilterFileText(fileText)
-
+    
     # From "videoskip.js"
     # hour:minute:second string to decimal seconds
     def fromHMS(timeString):
@@ -111,7 +70,7 @@ if (__name__ == '__main__'):
             return float(time[0])
 
     def parseFilterFileText(fileText):
-        # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
+        # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions (each time needs a decimal point for now until the regex is improved)
         # https://stackoverflow.com/questions/23620423/parsing-a-srt-file-with-regex
         result = re.findall("(\d+:\d+:\d+.\d+ --> \d+:\d+:\d+.\d+)\s+(.+)", fileText)
 
@@ -123,7 +82,52 @@ if (__name__ == '__main__'):
             currentCut["endTime"] = fromHMS(times[1])
             currentCut["action"] = myTuple[1]
             allCuts.append(currentCut)
+        
+        return allCuts
 
+    def loadFilterFile():
+        filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
+        fileInput = open(filePath, 'r')
+        fileText = fileInput.read()
+        global allCuts
+        allCuts = parseFilterFileText(fileText)
+
+    class XBMCPlayer(xbmc.Player):
+        def __init__(self, *args):
+            pass
+        def onAVChange(self):
+            loadFilterFile()
+
+    player = XBMCPlayer()
+
+    # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
+    def doTheFiltering(prevAction, allCuts):
+        startTime = 0
+        endTime = 0
+        action = ""
+        for tag in allCuts: # change allCuts to activeCuts
+            startTime = tag["startTime"]
+            endTime = tag["endTime"]
+            currentTime = xbmc.Player().getTime()
+            if currentTime > startTime and currentTime < endTime:
+                action = tag["action"]
+                break
+            # add overlapping filter handling here
+        #print("current action:", action, sep="")
+        if action == prevAction:
+            return prevAction
+        elif action == "skip":
+            xbmc.Player().seekTime(float(endTime) + 0.1)
+        elif action == "blank":
+            #blankScreen.show()
+            pass
+        elif action == "mute":
+            xbmc.executebuiltin('Mute')
+        else:
+            xbmc.executebuiltin('Mute') # Unmute
+            #blankScreen.hide()
+        prevAction = action
+        return prevAction
 
     # Derived and modified from the ServiceEntryPoint function in "service.py" from TvSkipIntro
     monitor = xbmc.Monitor()
@@ -132,8 +136,9 @@ if (__name__ == '__main__'):
         if xbmc.getCondVisibility("Player.HasMedia"):
             xbmc.sleep(10)
             try:
-                doTheFiltering()
+                prevAction = doTheFiltering(prevAction, allCuts)
             except:
                 pass
+            
 
 # How to display Family Movie Act of 2005 notice?
