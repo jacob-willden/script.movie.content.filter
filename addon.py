@@ -100,8 +100,40 @@ if (__name__ == '__main__'):
 
     player = XBMCPlayer()
 
+    class OverlayBlankScreen(object):
+        def __init__(self):
+            self.showing = False
+            self.window = xbmcgui.Window(12005) # Inheriting from 12005 keeps the black background from overlaying the interface
+            origin_x = 0
+            origin_y = 0
+            window_w = 1920 #self.window.getWidth()
+            window_h = 1080 #self.window.getHeight()
+
+            #main window
+            self._background = xbmcgui.ControlImage(origin_x, origin_y, window_w, window_h, os.path.join(addonpath,"resources","skins","default","media","black-background.png"))
+
+        def show(self):
+            if not self.showing:
+                self.showing=True
+                self.window.addControl(self._background)
+
+        def hide(self):
+            if self.showing:
+                self.showing=False
+                self.window.removeControl(self._background)
+
+        def _close(self):
+            if self.showing:
+                self.hide()
+            else:
+                pass
+            try:
+                self.window.clearProperties()
+                #print("OverlayBlankScreen window closed")
+            except: pass
+
     # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def doTheFiltering(prevAction, allCuts):
+    def doTheFiltering(prevAction, allCuts, blankScreen):
         startTime = 0
         endTime = 0
         action = ""
@@ -119,13 +151,12 @@ if (__name__ == '__main__'):
         elif action == "skip":
             xbmc.Player().seekTime(float(endTime) + 0.1)
         elif action == "blank":
-            #blankScreen.show()
-            pass
+            blankScreen.show()
         elif action == "mute":
             xbmc.executebuiltin('Mute')
         else:
             xbmc.executebuiltin('Mute') # Unmute
-            #blankScreen.hide()
+            blankScreen.hide()
         prevAction = action
         return prevAction
 
@@ -134,9 +165,11 @@ if (__name__ == '__main__'):
 
     while not monitor.abortRequested():
         if xbmc.getCondVisibility("Player.HasMedia"):
+            if not "blankScreen" in locals():
+                blankScreen = OverlayBlankScreen()
             xbmc.sleep(10)
             try:
-                prevAction = doTheFiltering(prevAction, allCuts)
+                prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
             except:
                 pass
             
