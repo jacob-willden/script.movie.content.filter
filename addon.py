@@ -153,9 +153,9 @@ if (__name__ == '__main__'):
         elif action == "blank":
             blankScreen.show()
         elif action == "mute":
-            xbmc.executebuiltin('Mute')
+            xbmc.executebuiltin('SetVolume(0)')
         else:
-            xbmc.executebuiltin('Mute') # Unmute
+            xbmc.executebuiltin('SetVolume(100)')
             blankScreen.hide()
         prevAction = action
         return prevAction
