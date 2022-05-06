@@ -106,8 +106,9 @@ if (__name__ == '__main__'):
             self.window = xbmcgui.Window(12005) # Inheriting from 12005 keeps the black background from overlaying the interface
             origin_x = 0
             origin_y = 0
-            window_w = 1920 #self.window.getWidth()
-            window_h = 1080 #self.window.getHeight()
+            # Since Kodi seems to usually report a smaller screen width and height than there really is, multiplying the values can be a hacky way to make sure the whole screen is covered when hiding the video
+            window_w = int(xbmc.getInfoLabel('System.ScreenWidth')) * 100
+            window_h = int(xbmc.getInfoLabel('System.ScreenHeight')) * 100
 
             #main window
             self._background = xbmcgui.ControlImage(origin_x, origin_y, window_w, window_h, os.path.join(addonpath,"resources","skins","default","media","black-background.png"))
