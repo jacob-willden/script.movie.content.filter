@@ -138,15 +138,33 @@ if (__name__ == '__main__'):
         startTime = 0
         endTime = 0
         action = ""
+        tempAction = ""
         for tag in allCuts: # change allCuts to activeCuts
             startTime = tag["startTime"]
             endTime = tag["endTime"]
             currentTime = xbmc.Player().getTime()
             if currentTime > startTime and currentTime < endTime:
-                action = tag["action"]
-                break
-            # add overlapping filter handling here
-        #print("current action:", action, sep="")
+                tempAction = tag["action"]
+            else:
+                tempAction = ""
+
+            if tempAction == 'skip': # Retain the strongest action valid for the current time. Hierarchy: skip > blank > mute
+                action = 'skip'
+                break # Can't get any stronger, so stop looking for this time
+            elif tempAction == 'blank':
+                if action == 'skip':
+                    action = action
+                else:
+                    action = tempAction
+            elif tempAction == 'mute':
+                if action == 'skip':
+                    action = action
+                else:
+                    if action == 'blank':
+                        action = 'skip'
+                    else:
+                        action = 'mute'
+            
         if action == prevAction:
             return prevAction
         elif action == "skip":
