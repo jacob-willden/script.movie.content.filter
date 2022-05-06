@@ -3,7 +3,7 @@
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 	</requires>
-	<extension point="xbmc.python.script" library="addon.py">
+	<extension point="xbmc.service" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
