@@ -183,4 +183,7 @@ if (__name__ == '__main__'):
             prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
             
 
-# How to display Family Movie Act of 2005 notice?
+# To Do List:
+# Family Movie Act of 2005 notice
+# Filtering categories
+# Filtering editor (how to activate? keyboard shortcut?)
