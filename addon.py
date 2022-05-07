@@ -188,10 +188,7 @@ if (__name__ == '__main__'):
         if xbmc.getCondVisibility("Player.HasMedia"):
             if not "blankScreen" in locals():
                 blankScreen = OverlayBlankScreen()
-            try:
-                prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
-            except:
-                pass
+            prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
             
 
 # How to display Family Movie Act of 2005 notice?
