@@ -183,10 +183,11 @@ if (__name__ == '__main__'):
     monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
+        if monitor.waitForAbort(0.01):
+            break
         if xbmc.getCondVisibility("Player.HasMedia"):
             if not "blankScreen" in locals():
                 blankScreen = OverlayBlankScreen()
-            xbmc.sleep(10)
             try:
                 prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
             except:
