@@ -8,17 +8,10 @@ VideoSkip Source Code Copyright (C) 2020, 2021 Francisco Ruiz
 (Released under the GNU General Public License (GNU GPL))
 Link: https://github.com/fruiz500/VideoSkip-extension/
 
-TvSkipIntro Add-on Copyright (C) 2018 aenema
-(Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
-Link: https://github.com/aenemapy/aenemapyrepo
-
 Most of the code below was derived and modified from several source 
 code files in the VideoSkip browser extension repository (source 
 link above), including "content1.js", "content2.js", and 
-"videoskip.js", and it is explicitly labled as so. Some of the code
-below was derived and modified from the "service.py" source code 
-file in the TvSkipIntro Add-on inside the "aenemapyrepo" repository
-(source link above), and it is explicitly labled as so.
+"videoskip.js", and it is explicitly labled as so.
 
 Afformentioned source code derived and modified by Jacob Willden
 Start Date of Derivation/Modification: November 20, 2020
@@ -179,7 +172,6 @@ if (__name__ == '__main__'):
         prevAction = action
         return prevAction
 
-    # Derived and modified from the ServiceEntryPoint function in "service.py" from TvSkipIntro
     monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
