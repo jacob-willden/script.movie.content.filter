@@ -62,6 +62,33 @@ if (__name__ == '__main__'):
         else: # only seconds
             return float(time[0])
 
+    def parseTagActionInfo(rawText): # 2 tags at the same time?
+        category = ""
+        severity = ""
+        action = ""
+
+        textWithoutComment = rawText.split(" #")[0] # Eliminate tag comments
+        textArray = textWithoutComment.split("=")
+        
+        category = textArray[0]
+
+        if textArray[1] == "high":
+            severity = 3
+        elif textArray[1] == "medium":
+            severity = 2
+        elif textArray[1] == "low":
+            severity = 1
+
+        if len(textArray) == 2 or textArray[2] == "both":
+            action = "skip"
+        elif textArray[2] == "video":
+            action = "blank"
+        elif textArray[2] == "audio":
+            action = "mute"
+        
+        return [category, severity, action]
+
+
     def parseFilterFileText(fileText):
         # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
         # https://stackoverflow.com/questions/23620423/parsing-a-srt-file-with-regex
