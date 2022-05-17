@@ -1,4 +1,3 @@
-# plugin.video.imdb.trailers language file
 msgid ""
 msgstr ""
 "Language: en\n"
