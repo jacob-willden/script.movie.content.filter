@@ -1,0 +1,440 @@
+# plugin.video.imdb.trailers language file
+msgid ""
+msgstr ""
+"Language: en\n"
+
+msgctxt "#30000"
+msgid "Movie Content Filter"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Commercial content"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Commercial content (General)"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Advert break"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Consumerism"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Product placement"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Discrimination"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Discrimination (General)"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Adultism"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Antisemitism"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Genderism"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Homophobia"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Misandry"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Misogyny"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Racism"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Sexism"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Supremacism"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Transphobia"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Xenophobia"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Dispensable scenes"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Dispensable scenes (General)"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Idiocy"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Tedious scene"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Drugs"
+msgstr ""
+
+msgctxt "#30024"
+msgid "Drugs (General)"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Alcohol"
+msgstr ""
+
+msgctxt "#30026"
+msgid "Antipsychotics"
+msgstr ""
+
+msgctxt "#30027"
+msgid "Cigarettes"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Depressants"
+msgstr ""
+
+msgctxt "#30029"
+msgid "Gambling"
+msgstr ""
+
+msgctxt "#30030"
+msgid "Hallucinogens"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Stimulants"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Fear"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Fear (General)"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Accident"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Acrophobia"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Aliens"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Arachnophobia"
+msgstr ""
+
+msgctxt "#30038"
+msgid "Astraphobia"
+msgstr ""
+
+msgctxt "#30039"
+msgid "Aviophobia"
+msgstr ""
+
+msgctxt "#30040"
+msgid "Chemophobia"
+msgstr ""
+
+msgctxt "#30041"
+msgid "Claustrophobia"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Coulrophobia"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Cynophobia"
+msgstr ""
+
+msgctxt "#30044"
+msgid "Death"
+msgstr ""
+
+msgctxt "#30045"
+msgid "Dentophobia"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Emetophobia"
+msgstr ""
+
+msgctxt "#30047"
+msgid "Enochlophobia"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Explosion"
+msgstr ""
+
+msgctxt "#30049"
+msgid "Fire"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Gerascophobia"
+msgstr ""
+
+msgctxt "#30051"
+msgid "Ghosts"
+msgstr ""
+
+msgctxt "#30052"
+msgid "Graves"
+msgstr ""
+
+msgctxt "#30053"
+msgid "Hemophobia"
+msgstr ""
+
+msgctxt "#30054"
+msgid "Hylophobia"
+msgstr ""
+
+msgctxt "#30055"
+msgid "Melissophobia"
+msgstr ""
+
+msgctxt "#30056"
+msgid "Misophonia"
+msgstr ""
+
+msgctxt "#30057"
+msgid "Musophobia"
+msgstr ""
+
+msgctxt "#30058"
+msgid "Mysophobia"
+msgstr ""
+
+msgctxt "#30059"
+msgid "Nosocomephobia"
+msgstr ""
+
+msgctxt "#30060"
+msgid "Nyctophobia"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Siderodromophobia"
+msgstr ""
+
+msgctxt "#30062"
+msgid "Thalassophobia"
+msgstr ""
+
+msgctxt "#30063"
+msgid "Vampires"
+msgstr ""
+
+msgctxt "#30064"
+msgid "Language"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Language (General)"
+msgstr ""
+
+msgctxt "#30066"
+msgid "Blasphemy"
+msgstr ""
+
+msgctxt "#30064"
+msgid "Name-calling"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Sexual dialogue"
+msgstr ""
+
+msgctxt "#30066"
+msgid "Swearing"
+msgstr ""
+
+msgctxt "#30067"
+msgid "Vulgarity"
+msgstr ""
+
+msgctxt "#30068"
+msgid "Nudity"
+msgstr ""
+
+msgctxt "#30069"
+msgid "Nudity (General)"
+msgstr ""
+
+msgctxt "#30070"
+msgid "Bare buttocks"
+msgstr ""
+
+msgctxt "#30071"
+msgid "Exposed genitalia"
+msgstr ""
+
+msgctxt "#30072"
+msgid "Full nudity"
+msgstr ""
+
+msgctxt "#30073"
+msgid "Toplessness"
+msgstr ""
+
+msgctxt "#30074"
+msgid "Sex"
+msgstr ""
+
+msgctxt "#30075"
+msgid "Sex (General)"
+msgstr ""
+
+msgctxt "#30076"
+msgid "Adultery"
+msgstr ""
+
+msgctxt "#30077"
+msgid "Anal sex"
+msgstr ""
+
+msgctxt "#30078"
+msgid "Coitus"
+msgstr ""
+
+msgctxt "#30079"
+msgid "Kissing"
+msgstr ""
+
+msgctxt "#30080"
+msgid "Masturbation"
+msgstr ""
+
+msgctxt "#30081"
+msgid "Objectification"
+msgstr ""
+
+msgctxt "#30082"
+msgid "Oral sex"
+msgstr ""
+
+msgctxt "#30083"
+msgid "Premarital sex"
+msgstr ""
+
+msgctxt "#30084"
+msgid "Promiscuity"
+msgstr ""
+
+msgctxt "#30085"
+msgid "Prostitution"
+msgstr ""
+
+msgctxt "#30086"
+msgid "Violence"
+msgstr ""
+
+msgctxt "#30087"
+msgid "Violence (General)"
+msgstr ""
+
+msgctxt "#30088"
+msgid "Choking"
+msgstr ""
+
+msgctxt "#30089"
+msgid "Cruelty to animals"
+msgstr ""
+
+msgctxt "#30090"
+msgid "Cultural violence"
+msgstr ""
+
+msgctxt "#30091"
+msgid "Desecration"
+msgstr ""
+
+msgctxt "#30092"
+msgid "Emotional violence"
+msgstr ""
+
+msgctxt "#30093"
+msgid "Kicking"
+msgstr ""
+
+msgctxt "#30094"
+msgid "Massacre"
+msgstr ""
+
+msgctxt "#30095"
+msgid "Murder"
+msgstr ""
+
+msgctxt "#30096"
+msgid "Punching"
+msgstr ""
+
+msgctxt "#30097"
+msgid "Rape"
+msgstr ""
+
+msgctxt "#30098"
+msgid "Slapping"
+msgstr ""
+
+msgctxt "#30099"
+msgid "Slavery"
+msgstr ""
+
+msgctxt "#30100"
+msgid "Stabbing"
+msgstr ""
+
+msgctxt "#30101"
+msgid "Torture"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Warfare"
+msgstr ""
+
+msgctxt "#30103"
+msgid "Weapons"
+msgstr ""
+
+msgctxt "#30104"
+msgid "Ableism"
+msgstr ""
+
+msgctxt "#30105"
+msgid "Sizeism"
+msgstr ""
