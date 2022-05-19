@@ -100,7 +100,11 @@ if (__name__ == '__main__'):
             times = myTuple[0].split(" --> ")
             currentCut["startTime"] = fromHMS(times[0])
             currentCut["endTime"] = fromHMS(times[1])
-            currentCut["action"] = myTuple[1]
+
+            actionInfo = parseTagActionInfo(myTuple[1])
+            currentCut["category"] = actionInfo[0]
+            currentCut["severity"] = actionInfo[1]
+            currentCut["action"] = actionInfo[2]
             allCuts.append(currentCut)
         
         return allCuts
@@ -108,7 +112,7 @@ if (__name__ == '__main__'):
     # Modified from isSkipped function from "content2.js" from VideoSkip
     def isTagActive(tag, userSettings):
         category = tag["category"]
-        return tag["severity"] + userSettings[category] > 3
+        return int(tag["severity"]) + int(userSettings[category]) > 3
 
     def applyFilters(allCuts):
         categoryIdList = ["commercial", "advertBreak", "consumerism", "productPlacement", "discrimination", "ableism", "adultism", "antisemitism", "genderism", "homophobia", "misandry", "misogyny", "racism", "sexism", "sizeism", "supremacism", "transphobia", "xenophobia", "dispensable", "idiocy", "tedious", "drugs", "alcohol", "antipsychotics", "cigarettes", "depressants", "gambling", "hallucinogens", "stimulants", "fear", "accident", "acrophobia", "aliens", "arachnophobia", "astraphobia", "aviophobia", "chemophobia", "claustrophobia", "coulrophobia", "cynophobia", "death", "dentophobia", "emetophobia", "enochlophobia", "explosion", "fire", "gerascophobia", "ghosts", "graves", "hemophobia", "hylophobia", "melissophobia", "misophonia", "musophobia", "mysophobia", "nosocomephobia", "nyctophobia", "siderodromophobia", "thalassophobia", "vampires", "language", "blasphemy", "nameCalling", "sexualDialogue", "swearing", "vulgarity", "nudity", "bareButtocks", "exposedGenitalia", "fullNudity", "toplessness", "sex", "adultery", "analSex", "coitus", "kissing", "masturbation", "objectification", "oralSex", "premaritalSex", "promiscuity", "prostitution", "violence", "choking", "crueltyToAnimals", "culturalViolence", "desecration", "emotionalViolence", "kicking", "massacre", "murder", "punching", "rape", "slapping", "slavery", "stabbing", "torture", "warfare", "weapons"]
@@ -232,5 +236,4 @@ if (__name__ == '__main__'):
 
 # To Do List:
 # Family Movie Act of 2005 notice
-# Filtering categories
 # Filtering editor (how to activate? keyboard shortcut?)
