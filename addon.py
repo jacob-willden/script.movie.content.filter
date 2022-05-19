@@ -4,14 +4,14 @@ This file is part of the Movie Content Filter Kodi Add-on Project.
 Movie Content Filter Kodi Add-on Project Copyright (C) 2021, 2022 Jacob Willden
 (Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
 
-VideoSkip Source Code Copyright (C) 2020, 2021 Francisco Ruiz
+VideoSkip Source Code Copyright (C) 2020, 2021, 2022 Francisco Ruiz
 (Released under the GNU General Public License (GNU GPL))
 Link: https://github.com/fruiz500/VideoSkip-extension/
 
 Most of the code below was derived and modified from several source 
 code files in the VideoSkip browser extension repository (source 
-link above), including "content1.js", "content2.js", and 
-"videoskip.js", and it is explicitly labled as so.
+link above), including "content1.js" and "content2.js", and it is 
+explicitly labled as so.
 
 Afformentioned source code derived and modified by Jacob Willden
 Start Date of Derivation/Modification: November 20, 2020
@@ -38,7 +38,7 @@ You should have recieved a copy of the GNU General Public License
 along with this project. Otherwise, see: https://www.gnu.org/licenses/
 """
 
-import xbmc, xbmcaddon, xbmcgui, os, re
+import xbmc, xbmcaddon, xbmcgui, os, re, sys, xbmcplugin
 
 ADDON = xbmcaddon.Addon()
 addonpath = ADDON.getAddonInfo('path')
@@ -46,11 +46,11 @@ addonpath = ADDON.getAddonInfo('path')
 if (__name__ == '__main__'):
     print("filter addon starting")
 
-    allCuts = []
+    activeCuts = []
 
     prevAction = ""
     
-    # From "videoskip.js"
+    # From "content2.js" from VideoSkip
     # hour:minute:second string to decimal seconds
     def fromHMS(timeString):
         timeString = timeString.replace(",", ".") # in .srt format decimal seconds use a comma
@@ -105,12 +105,32 @@ if (__name__ == '__main__'):
         
         return allCuts
 
+    # Modified from isSkipped function from "content2.js" from VideoSkip
+    def isTagActive(tag, userSettings):
+        category = tag["category"]
+        return tag["severity"] + userSettings[category] > 3
+
+    def applyFilters(allCuts):
+        categoryIdList = ["commercial", "advertBreak", "consumerism", "productPlacement", "discrimination", "ableism", "adultism", "antisemitism", "genderism", "homophobia", "misandry", "misogyny", "racism", "sexism", "sizeism", "supremacism", "transphobia", "xenophobia", "dispensable", "idiocy", "tedious", "drugs", "alcohol", "antipsychotics", "cigarettes", "depressants", "gambling", "hallucinogens", "stimulants", "fear", "accident", "acrophobia", "aliens", "arachnophobia", "astraphobia", "aviophobia", "chemophobia", "claustrophobia", "coulrophobia", "cynophobia", "death", "dentophobia", "emetophobia", "enochlophobia", "explosion", "fire", "gerascophobia", "ghosts", "graves", "hemophobia", "hylophobia", "melissophobia", "misophonia", "musophobia", "mysophobia", "nosocomephobia", "nyctophobia", "siderodromophobia", "thalassophobia", "vampires", "language", "blasphemy", "nameCalling", "sexualDialogue", "swearing", "vulgarity", "nudity", "bareButtocks", "exposedGenitalia", "fullNudity", "toplessness", "sex", "adultery", "analSex", "coitus", "kissing", "masturbation", "objectification", "oralSex", "premaritalSex", "promiscuity", "prostitution", "violence", "choking", "crueltyToAnimals", "culturalViolence", "desecration", "emotionalViolence", "kicking", "massacre", "murder", "punching", "rape", "slapping", "slavery", "stabbing", "torture", "warfare", "weapons"]
+        userSettings = {}
+        for category in categoryIdList:
+            userSettings[category] = ADDON.getSetting(category)
+
+        # Modified from isSkipped function from "content2.js" from VideoSkip
+        activeCuts = []
+        for cut in allCuts:
+            if isTagActive(cut, userSettings):
+                activeCuts.append(cut)
+
+        return activeCuts
+
     def loadFilterFile():
         filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
         fileInput = open(filePath, 'r')
         fileText = fileInput.read()
-        global allCuts
         allCuts = parseFilterFileText(fileText)
+        global activeCuts
+        activeCuts = applyFilters(allCuts)
 
     class XBMCPlayer(xbmc.Player):
         def __init__(self, *args):
@@ -154,12 +174,12 @@ if (__name__ == '__main__'):
             except: pass
 
     # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def doTheFiltering(prevAction, allCuts, blankScreen):
+    def doTheFiltering(prevAction, activeCuts, blankScreen):
         startTime = 0
         endTime = 0
         action = ""
         tempAction = ""
-        for tag in allCuts: # change allCuts to activeCuts
+        for tag in activeCuts:
             startTime = tag["startTime"]
             endTime = tag["endTime"]
             currentTime = xbmc.Player().getTime()
@@ -207,7 +227,7 @@ if (__name__ == '__main__'):
         if xbmc.getCondVisibility("Player.HasMedia"):
             if not "blankScreen" in locals():
                 blankScreen = OverlayBlankScreen()
-            prevAction = doTheFiltering(prevAction, allCuts, blankScreen)
+            prevAction = doTheFiltering(prevAction, activeCuts, blankScreen)
             
 
 # To Do List:
