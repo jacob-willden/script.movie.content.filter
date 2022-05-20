@@ -147,7 +147,7 @@ if (__name__ == '__main__'):
 
     # Modified from the LazyMonitor class from "service.py" from LazyTV
     class AppMonitor(xbmc.Monitor):
-        def __init__(self):
+        def __init__(self, *args, **kwargs):
             xbmc.Monitor.__init__(self)
 
         def onSettingsChanged(self):
