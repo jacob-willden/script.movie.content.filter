@@ -4,14 +4,20 @@ This file is part of the Movie Content Filter Kodi Add-on Project.
 Movie Content Filter Kodi Add-on Project Copyright (C) 2021, 2022 Jacob Willden
 (Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
 
-VideoSkip Source Code Copyright (C) 2020, 2021, 2022 Francisco Ruiz
+VideoSkip Browser Extension Copyright (C) 2020, 2021, 2022 Francisco Ruiz
 (Released under the GNU General Public License (GNU GPL))
 Link: https://github.com/fruiz500/VideoSkip-extension/
+
+LazyTV Kodi Add-on (C) 2013, 2014, 2015 KodeKarnage
+(Released under the GNU General Public License (GNU GPL) Version 2.0 or later)
+Link: https://github.com/KODeKarnage/script.lazytv
 
 Most of the code below was derived and modified from several source 
 code files in the VideoSkip browser extension repository (source 
 link above), including "content1.js" and "content2.js", and it is 
-explicitly labled as so.
+explicitly labled as so. One snippet of code below is derived from 
+the file "service.py" in the LazyTV Kodi Add-on, also explicitly 
+labeled as so.
 
 Afformentioned source code derived and modified by Jacob Willden
 Start Date of Derivation/Modification: November 20, 2020
@@ -38,7 +44,7 @@ You should have recieved a copy of the GNU General Public License
 along with this project. Otherwise, see: https://www.gnu.org/licenses/
 """
 
-import xbmc, xbmcaddon, xbmcgui, os, re, sys, xbmcplugin
+import xbmc, xbmcaddon, xbmcgui, os, re
 
 ADDON = xbmcaddon.Addon()
 addonpath = ADDON.getAddonInfo('path')
@@ -46,10 +52,6 @@ addonpath = ADDON.getAddonInfo('path')
 if (__name__ == '__main__'):
     print("filter addon starting")
 
-    activeCuts = []
-
-    prevAction = ""
-    
     # From "content2.js" from VideoSkip
     # hour:minute:second string to decimal seconds
     def fromHMS(timeString):
@@ -108,24 +110,30 @@ if (__name__ == '__main__'):
             allCuts.append(currentCut)
         
         return allCuts
+        
+    userSettings = {}
+
+    def updateUserSettings():
+        categoryIdList = ["commercial", "advertBreak", "consumerism", "productPlacement", "discrimination", "ableism", "adultism", "antisemitism", "genderism", "homophobia", "misandry", "misogyny", "racism", "sexism", "sizeism", "supremacism", "transphobia", "xenophobia", "dispensable", "idiocy", "tedious", "drugs", "alcohol", "antipsychotics", "cigarettes", "depressants", "gambling", "hallucinogens", "stimulants", "fear", "accident", "acrophobia", "aliens", "arachnophobia", "astraphobia", "aviophobia", "chemophobia", "claustrophobia", "coulrophobia", "cynophobia", "death", "dentophobia", "emetophobia", "enochlophobia", "explosion", "fire", "gerascophobia", "ghosts", "graves", "hemophobia", "hylophobia", "melissophobia", "misophonia", "musophobia", "mysophobia", "nosocomephobia", "nyctophobia", "siderodromophobia", "thalassophobia", "vampires", "language", "blasphemy", "nameCalling", "sexualDialogue", "swearing", "vulgarity", "nudity", "bareButtocks", "exposedGenitalia", "fullNudity", "toplessness", "sex", "adultery", "analSex", "coitus", "kissing", "masturbation", "objectification", "oralSex", "premaritalSex", "promiscuity", "prostitution", "violence", "choking", "crueltyToAnimals", "culturalViolence", "desecration", "emotionalViolence", "kicking", "massacre", "murder", "punching", "rape", "slapping", "slavery", "stabbing", "torture", "warfare", "weapons"]
+        global userSettings
+        userSettings = {}
+        for category in categoryIdList:
+            userSettings[category] = ADDON.getSetting(category)
 
     # Modified from isSkipped function from "content2.js" from VideoSkip
     def isTagActive(tag, userSettings):
         category = tag["category"]
         return int(tag["severity"]) + int(userSettings[category]) > 3
 
-    def applyFilters(allCuts):
-        categoryIdList = ["commercial", "advertBreak", "consumerism", "productPlacement", "discrimination", "ableism", "adultism", "antisemitism", "genderism", "homophobia", "misandry", "misogyny", "racism", "sexism", "sizeism", "supremacism", "transphobia", "xenophobia", "dispensable", "idiocy", "tedious", "drugs", "alcohol", "antipsychotics", "cigarettes", "depressants", "gambling", "hallucinogens", "stimulants", "fear", "accident", "acrophobia", "aliens", "arachnophobia", "astraphobia", "aviophobia", "chemophobia", "claustrophobia", "coulrophobia", "cynophobia", "death", "dentophobia", "emetophobia", "enochlophobia", "explosion", "fire", "gerascophobia", "ghosts", "graves", "hemophobia", "hylophobia", "melissophobia", "misophonia", "musophobia", "mysophobia", "nosocomephobia", "nyctophobia", "siderodromophobia", "thalassophobia", "vampires", "language", "blasphemy", "nameCalling", "sexualDialogue", "swearing", "vulgarity", "nudity", "bareButtocks", "exposedGenitalia", "fullNudity", "toplessness", "sex", "adultery", "analSex", "coitus", "kissing", "masturbation", "objectification", "oralSex", "premaritalSex", "promiscuity", "prostitution", "violence", "choking", "crueltyToAnimals", "culturalViolence", "desecration", "emotionalViolence", "kicking", "massacre", "murder", "punching", "rape", "slapping", "slavery", "stabbing", "torture", "warfare", "weapons"]
-        userSettings = {}
-        for category in categoryIdList:
-            userSettings[category] = ADDON.getSetting(category)
+    activeCuts = []
 
-        # Modified from isSkipped function from "content2.js" from VideoSkip
+    # Modified from isSkipped function from "content2.js" from VideoSkip
+    def applyFilters(allCuts, userSettings):
+        global activeCuts
         activeCuts = []
         for cut in allCuts:
             if isTagActive(cut, userSettings):
                 activeCuts.append(cut)
-
         return activeCuts
 
     def loadFilterFile():
@@ -133,8 +141,19 @@ if (__name__ == '__main__'):
         fileInput = open(filePath, 'r')
         fileText = fileInput.read()
         allCuts = parseFilterFileText(fileText)
-        global activeCuts
-        activeCuts = applyFilters(allCuts)
+        global userSettings
+        activeCuts = applyFilters(allCuts, userSettings)
+        # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
+
+    # Modified from the LazyMonitor class from "service.py" from LazyTV
+    class AppMonitor(xbmc.Monitor):
+        def __init__(self):
+            xbmc.Monitor.__init__(self)
+
+        def onSettingsChanged(self):
+            updateUserSettings()
+
+    monitor = AppMonitor()
 
     class XBMCPlayer(xbmc.Player):
         def __init__(self, *args):
@@ -176,6 +195,8 @@ if (__name__ == '__main__'):
                 self.window.clearProperties()
                 #print("OverlayBlankScreen window closed")
             except: pass
+
+    prevAction = ""
 
     # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
     def doTheFiltering(prevAction, activeCuts, blankScreen):
@@ -222,8 +243,6 @@ if (__name__ == '__main__'):
             blankScreen.hide()
         prevAction = action
         return prevAction
-
-    monitor = xbmc.Monitor()
 
     while not monitor.abortRequested():
         if monitor.waitForAbort(0.01):
