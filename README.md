@@ -21,8 +21,9 @@ VideoSkip Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
 ## How to Use
 
 1. Install the add-on based on the installation instructions above.
-2. Create a filter file in the same folder as the video that you want to watch, with the same name as the video file except with the ".mcf" extension (for example, if you have a video called "Big Buck Bunny.mp4", then the filter file should be called "Big Buck Bunny.mcf" and be in the same folder).
-3. Open the video with Kodi, and enjoy it without the objectionable content!
+2. Adjust the add-on settings so the add-on will filter (or not filter) certain content from videos based on your preferences. The settings can be accessed by finding the add-on in the Add-ons screen, bringing up the add-on's Context Menu, and clicking Settings (see the [Add-ons article on the Kodi Wiki](https://kodi.wiki/view/Add-ons) for more information). 
+3. Create a filter file in the same folder as the video that you want to watch, with the same name as the video file except with the ".mcf" extension (for example, if you have a video called "Big Buck Bunny.mp4", then the filter file should be called "Big Buck Bunny.mcf" and be in the same folder).
+4. Open the video with Kodi, and enjoy it without the objectionable content!
 
 Here's how the filter file should be currently structured, with as many filter tags as you would like (this will be updated as needed):
 
