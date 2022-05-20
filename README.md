@@ -21,7 +21,7 @@ VideoSkip Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
 ## How to Use
 
 1. Install the add-on based on the installation instructions above.
-2. Adjust the add-on settings so the add-on will filter (or not filter) certain content from videos based on your preferences. The settings can be accessed by finding the add-on in the Add-ons screen, bringing up the add-on's Context Menu, and clicking Settings (see the [Add-ons article on the Kodi Wiki](https://kodi.wiki/view/Add-ons) for more information). 
+2. Adjust the add-on settings so the add-on will filter (or not filter) certain content from videos based on your preferences. With the number value for each category in the settings, 0 means nothing will be filtered in that category, 1 means only high severity content will be filtered in that category, 2 means high and medium severity content will be filtered in that category, and 3 means all content (high, medium, and low severity) in that category will be filtered. The settings can be accessed by finding the add-on in the Add-ons screen, bringing up the add-on's Context Menu, and clicking Settings (see the [Add-ons article on the Kodi Wiki](https://kodi.wiki/view/Add-ons) for more information). 
 3. Create a filter file in the same folder as the video that you want to watch, with the same name as the video file except with the ".mcf" extension (for example, if you have a video called "Big Buck Bunny.mp4", then the filter file should be called "Big Buck Bunny.mcf" and be in the same folder).
 4. Open the video with Kodi, and enjoy it without the objectionable content!
 
@@ -39,7 +39,7 @@ Here's how the filter file should be currently structured, with as many filter t
     00:00:13.2 --> 00:00:15
     nameCalling=low=audio
 
-Categories for filters can be found in the [Movie Content Filter specifications](https://www.moviecontentfilter.com/specification), with 2 changes. One change is that the "Grave" (represented as "grave" in filter files) is replaced with "Graves" (with "graves" in the filter file). The other change is the addition of the Ableism ("ableism" in the filter files) and Sizeism ("sizeism" in the filter files) categories.
+Categories for filters can be found in the [Movie Content Filter specifications](https://www.moviecontentfilter.com/specification), with 2 changes. One change is that the "Grave" (represented as "grave" in filter files) is replaced with "Graves" (with "graves" in the filter file). The other change is the addition of the Ableism ("ableism" in filter files) and Sizeism ("sizeism" in filter files) categories.
 
 ## Legal
 
