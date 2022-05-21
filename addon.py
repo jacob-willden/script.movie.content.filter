@@ -47,9 +47,9 @@ along with this project. Otherwise, see: https://www.gnu.org/licenses/
 import xbmc, xbmcaddon, xbmcgui, os, re
 
 ADDON = xbmcaddon.Addon()
-addonpath = ADDON.getAddonInfo('path')
+addonpath = ADDON.getAddonInfo("path")
 
-if (__name__ == '__main__'):
+if (__name__ == "__main__"):
     print("filter addon starting")
 
     # From "content2.js" from VideoSkip
@@ -139,7 +139,7 @@ if (__name__ == '__main__'):
     def loadFilterFile():
         try:
             filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
-            fileInput = open(filePath, 'r')
+            fileInput = open(filePath, "r")
             fileText = fileInput.read()
             allCuts = parseFilterFileText(fileText)
             global userSettings
@@ -173,8 +173,8 @@ if (__name__ == '__main__'):
             origin_x = 0
             origin_y = 0
             # Since Kodi seems to usually report a smaller screen width and height than there really is, multiplying the values can be a hacky way to make sure the whole screen is covered when hiding the video
-            window_w = int(xbmc.getInfoLabel('System.ScreenWidth')) * 100
-            window_h = int(xbmc.getInfoLabel('System.ScreenHeight')) * 100
+            window_w = int(xbmc.getInfoLabel("System.ScreenWidth")) * 100
+            window_h = int(xbmc.getInfoLabel("System.ScreenHeight")) * 100
 
             #main window
             self._background = xbmcgui.ControlImage(origin_x, origin_y, window_w, window_h, os.path.join(addonpath,"resources","skins","default","media","black-background.png"))
@@ -216,22 +216,22 @@ if (__name__ == '__main__'):
             else:
                 tempAction = ""
 
-            if tempAction == 'skip': # Retain the strongest action valid for the current time. Hierarchy: skip > blank > mute
-                action = 'skip'
+            if tempAction == "skip": # Retain the strongest action valid for the current time. Hierarchy: skip > blank > mute
+                action = "skip"
                 break # Can't get any stronger, so stop looking for this time
-            elif tempAction == 'blank':
-                if action == 'skip':
+            elif tempAction == "blank":
+                if action == "skip":
                     action = action
                 else:
                     action = tempAction
-            elif tempAction == 'mute':
-                if action == 'skip':
+            elif tempAction == "mute":
+                if action == "skip":
                     action = action
                 else:
-                    if action == 'blank':
-                        action = 'skip'
+                    if action == "blank":
+                        action = "skip"
                     else:
-                        action = 'mute'
+                        action = "mute"
             
         if action == prevAction:
             return prevAction
@@ -240,9 +240,9 @@ if (__name__ == '__main__'):
         elif action == "blank":
             blankScreen.show()
         elif action == "mute":
-            xbmc.executebuiltin('SetVolume(0)')
+            xbmc.executebuiltin("SetVolume(0)")
         else:
-            xbmc.executebuiltin('SetVolume(100)')
+            xbmc.executebuiltin("SetVolume(100)")
             blankScreen.hide()
         prevAction = action
         return prevAction
