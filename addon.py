@@ -134,7 +134,6 @@ if (__name__ == "__main__"):
         for cut in allCuts:
             if isTagActive(cut, userSettings):
                 activeCuts.append(cut)
-        return activeCuts
 
     def loadFilterFile():
         try:
@@ -144,7 +143,7 @@ if (__name__ == "__main__"):
             allCuts = parseFilterFileText(fileText)
             updateUserSettings()
             global userSettings
-            activeCuts = applyFilters(allCuts, userSettings)
+            applyFilters(allCuts, userSettings)
             # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
         except:
             print("Unable to find or process MCF file")
