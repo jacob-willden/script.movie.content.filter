@@ -142,11 +142,12 @@ if (__name__ == "__main__"):
             fileInput = open(filePath, "r")
             fileText = fileInput.read()
             allCuts = parseFilterFileText(fileText)
+            updateUserSettings()
             global userSettings
             activeCuts = applyFilters(allCuts, userSettings)
             # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
         except:
-            print("No MCF file found")
+            print("Unable to find or process MCF file")
 
     # Modified from the LazyMonitor class from "service.py" from LazyTV
     class AppMonitor(xbmc.Monitor):
