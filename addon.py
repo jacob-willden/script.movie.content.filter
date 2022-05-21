@@ -137,13 +137,16 @@ if (__name__ == '__main__'):
         return activeCuts
 
     def loadFilterFile():
-        filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
-        fileInput = open(filePath, 'r')
-        fileText = fileInput.read()
-        allCuts = parseFilterFileText(fileText)
-        global userSettings
-        activeCuts = applyFilters(allCuts, userSettings)
-        # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
+        try:
+            filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
+            fileInput = open(filePath, 'r')
+            fileText = fileInput.read()
+            allCuts = parseFilterFileText(fileText)
+            global userSettings
+            activeCuts = applyFilters(allCuts, userSettings)
+            # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
+        except:
+            print("No MCF file found")
 
     # Modified from the LazyMonitor class from "service.py" from LazyTV
     class AppMonitor(xbmc.Monitor):
