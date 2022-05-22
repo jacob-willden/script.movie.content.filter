@@ -257,5 +257,6 @@ if (__name__ == "__main__"):
             
 
 # To Do List:
+# Address inability to access settings for service add-on through main screens (use Version Check as an example)
 # Family Movie Act of 2005 notice
 # Filtering editor (how to activate? keyboard shortcut?)
