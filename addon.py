@@ -160,14 +160,15 @@ if (__name__ == "__main__"):
     class FamilyMovieActNotice(object):
         def __init__(self):
             self.showing = False
-            self.window = xbmcgui.Window(12005) # Inheriting from 12005 keeps the black background from overlaying the interface
-            origin_x = 100
-            origin_y = 100
-            window_w = int(xbmc.getInfoLabel("System.ScreenWidth"))
-            window_h = int(xbmc.getInfoLabel("System.ScreenHeight"))
+            self.window = xbmcgui.Window(12005)
+            origin_x = 300
+            origin_y = 400
+            window_w = int(xbmc.getInfoLabel("System.ScreenWidth")) * 2
+            window_h = int(xbmc.getInfoLabel("System.ScreenHeight")) * 4
 
             #main window
-            self._disclaimer = xbmcgui.ControlLabel(origin_x, origin_y, window_w, window_h, "Notice: The performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture.")
+            self._disclaimer = xbmcgui.ControlTextBox(origin_x, origin_y, window_w, window_h)
+            self._disclaimer.setText("Notice: The performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture.")
 
         def show(self):
             if not self.showing:
@@ -300,5 +301,5 @@ if (__name__ == "__main__"):
 
 # To Do List:
 # Address inability to access settings for service add-on through main screens (use Version Check as an example)
-# Family Movie Act of 2005 notice
+# Family Movie Act of 2005 notice (including black background behind text for readability and keeping the right Z-index, if needed, plus the right position and size)
 # Filtering editor (how to activate? keyboard shortcut?)
