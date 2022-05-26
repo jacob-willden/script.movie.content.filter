@@ -161,6 +161,8 @@ if (__name__ == "__main__"):
         def __init__(self):
             self.showing = False
             self.window = xbmcgui.Window(12005)
+            
+            # Arbitrary values for position and size for now
             origin_x = 300
             origin_y = 400
             window_w = int(xbmc.getInfoLabel("System.ScreenWidth")) * 2
@@ -168,7 +170,7 @@ if (__name__ == "__main__"):
 
             #main window
             self._disclaimer = xbmcgui.ControlTextBox(origin_x, origin_y, window_w, window_h)
-            self._disclaimer.setText("Notice: The performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture.")
+            self._disclaimer.setText(ADDON.getLocalizedString(32106))
 
         def show(self):
             if not self.showing:
