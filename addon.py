@@ -44,7 +44,7 @@ You should have recieved a copy of the GNU General Public License
 along with this project. Otherwise, see: https://www.gnu.org/licenses/
 """
 
-import xbmc, xbmcaddon, xbmcgui, os, re
+import xbmc, xbmcaddon, xbmcgui, os, re, threading
 
 ADDON = xbmcaddon.Addon()
 addonpath = ADDON.getAddonInfo("path")
@@ -144,7 +144,6 @@ if (__name__ == "__main__"):
             updateUserSettings()
             global userSettings
             applyFilters(allCuts, userSettings)
-            # displayLegalNotice? What about subtitles? Maybe check if it's already popped up?
         except:
             print("Unable to find or process MCF file")
 
@@ -158,11 +157,54 @@ if (__name__ == "__main__"):
 
     monitor = AppMonitor()
 
+    class FamilyMovieActNotice(object):
+        def __init__(self):
+            self.showing = False
+            self.window = xbmcgui.Window(12005) # Inheriting from 12005 keeps the black background from overlaying the interface
+            origin_x = 100
+            origin_y = 100
+            window_w = int(xbmc.getInfoLabel("System.ScreenWidth"))
+            window_h = int(xbmc.getInfoLabel("System.ScreenHeight"))
+
+            #main window
+            self._disclaimer = xbmcgui.ControlLabel(origin_x, origin_y, window_w, window_h, "Notice: The performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture.")
+
+        def show(self):
+            if not self.showing:
+                self.showing=True
+                self.window.addControl(self._disclaimer)
+
+        def hide(self):
+            if self.showing:
+                self.showing=False
+                self.window.removeControl(self._disclaimer)
+
+        def _close(self):
+            if self.showing:
+                self.hide()
+            else:
+                pass
+            try:
+                self.window.clearProperties()
+            except: pass
+
+    def displayLegalNotice():
+        if not "legalNotice" in locals():
+            legalNotice = FamilyMovieActNotice()
+        legalNotice.show()
+
+        def removeNotice(legalNotice):
+            legalNotice.hide()
+
+        timer = threading.Timer(6.0, lambda: removeNotice(legalNotice))
+        timer.start()
+
     class XBMCPlayer(xbmc.Player):
         def __init__(self, *args):
             pass
         def onAVChange(self):
             loadFilterFile()
+            displayLegalNotice()
 
     player = XBMCPlayer()
 
