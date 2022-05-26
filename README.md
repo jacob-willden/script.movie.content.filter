@@ -12,11 +12,12 @@ VideoSkip Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
 
 ## Installation Instructions
 
-1. Download the source code as a ZIP file.
-2. Launch the Kodi software.
-3. Navigate to the Add-ons screen.
-4. Click "Install from zip file".
-5. Select the "script.movie.content.filter.zip" file.
+1. Make sure you have Kodi installed on a device (see the [tutorial on the Kodi Wiki](https://kodi.wiki/view/Installing)). Kodi version 19 or later is currently required.
+2. Download the source code for the add-on as a ZIP file.
+3. Launch the Kodi software.
+4. Navigate to the Add-ons screen.
+5. Click "Install from zip file".
+6. Select the "script.movie.content.filter.zip" file.
 
 ## How to Use
 
