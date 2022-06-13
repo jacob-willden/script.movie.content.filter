@@ -1,120 +1,1229 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<settings>
-    <category label="32001">
-        <setting label="32002" type="slider" id="commercial" range="0,1,3" option="int" default="3" />
-        <setting label="32003" type="slider" id="advertBreak" range="0,1,3" option="int" default="3" />
-        <setting label="32004" type="slider" id="consumerism" range="0,1,3" option="int" default="3" />
-        <setting label="32005" type="slider" id="productPlacement" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32006">
-        <setting label="32007" type="slider" id="discrimination" range="0,1,3" option="int" default="3" />
-        <setting label="32104" type="slider" id="ableism" range="0,1,3" option="int" default="3" />
-        <setting label="32008" type="slider" id="adultism" range="0,1,3" option="int" default="3" />
-        <setting label="32009" type="slider" id="antisemitism" range="0,1,3" option="int" default="3" />
-        <setting label="32010" type="slider" id="genderism" range="0,1,3" option="int" default="3" />
-        <setting label="32011" type="slider" id="homophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32012" type="slider" id="misandry" range="0,1,3" option="int" default="3" />
-        <setting label="32013" type="slider" id="misogyny" range="0,1,3" option="int" default="3" />
-        <setting label="32014" type="slider" id="racism" range="0,1,3" option="int" default="3" />
-        <setting label="32015" type="slider" id="sexism" range="0,1,3" option="int" default="3" />
-        <setting label="32105" type="slider" id="sizeism" range="0,1,3" option="int" default="3" />
-        <setting label="32016" type="slider" id="supremacism" range="0,1,3" option="int" default="3" />
-        <setting label="32017" type="slider" id="transphobia" range="0,1,3" option="int" default="3" />
-        <setting label="32018" type="slider" id="xenophobia" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32019">
-        <setting label="32020" type="slider" id="dispensable" range="0,1,3" option="int" default="3" />
-        <setting label="32021" type="slider" id="idiocy" range="0,1,3" option="int" default="3" />
-        <setting label="32022" type="slider" id="tedious" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32023">
-        <setting label="32024" type="slider" id="drugs" range="0,1,3" option="int" default="3" />
-        <setting label="32025" type="slider" id="alcohol" range="0,1,3" option="int" default="3" />
-        <setting label="32026" type="slider" id="antipsychotics" range="0,1,3" option="int" default="3" />
-        <setting label="32027" type="slider" id="cigarettes" range="0,1,3" option="int" default="3" />
-        <setting label="32028" type="slider" id="depressants" range="0,1,3" option="int" default="3" />
-        <setting label="32029" type="slider" id="gambling" range="0,1,3" option="int" default="3" />
-        <setting label="32030" type="slider" id="hallucinogens" range="0,1,3" option="int" default="3" />
-        <setting label="32031" type="slider" id="stimulants" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32032">
-        <setting label="32033" type="slider" id="fear" range="0,1,3" option="int" default="3" />
-        <setting label="32034" type="slider" id="accident" range="0,1,3" option="int" default="3" />
-        <setting label="32035" type="slider" id="acrophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32036" type="slider" id="aliens" range="0,1,3" option="int" default="3" />
-        <setting label="32037" type="slider" id="arachnophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32038" type="slider" id="astraphobia" range="0,1,3" option="int" default="3" />
-        <setting label="32039" type="slider" id="aviophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32040" type="slider" id="chemophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32041" type="slider" id="claustrophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32042" type="slider" id="coulrophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32043" type="slider" id="cynophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32044" type="slider" id="death" range="0,1,3" option="int" default="3" />
-        <setting label="32045" type="slider" id="dentophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32046" type="slider" id="emetophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32047" type="slider" id="enochlophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32048" type="slider" id="explosion" range="0,1,3" option="int" default="3" />
-        <setting label="32049" type="slider" id="fire" range="0,1,3" option="int" default="3" />
-        <setting label="32050" type="slider" id="gerascophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32051" type="slider" id="ghosts" range="0,1,3" option="int" default="3" />
-        <setting label="32052" type="slider" id="graves" range="0,1,3" option="int" default="3" />
-        <setting label="32053" type="slider" id="hemophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32054" type="slider" id="hylophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32055" type="slider" id="melissophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32056" type="slider" id="misophonia" range="0,1,3" option="int" default="3" />
-        <setting label="32057" type="slider" id="musophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32058" type="slider" id="mysophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32059" type="slider" id="nosocomephobia" range="0,1,3" option="int" default="3" />
-        <setting label="32060" type="slider" id="nyctophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32061" type="slider" id="siderodromophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32062" type="slider" id="thalassophobia" range="0,1,3" option="int" default="3" />
-        <setting label="32063" type="slider" id="vampires" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32064">
-        <setting label="32065" type="slider" id="language" range="0,1,3" option="int" default="3" />
-        <setting label="32066" type="slider" id="blasphemy" range="0,1,3" option="int" default="3" />
-        <setting label="32067" type="slider" id="nameCalling" range="0,1,3" option="int" default="3" />
-        <setting label="32068" type="slider" id="sexualDialogue" range="0,1,3" option="int" default="3" />
-        <setting label="32069" type="slider" id="swearing" range="0,1,3" option="int" default="3" />
-        <setting label="32070" type="slider" id="vulgarity" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32068">
-        <setting label="32069" type="slider" id="nudity" range="0,1,3" option="int" default="3" />
-        <setting label="32070" type="slider" id="bareButtocks" range="0,1,3" option="int" default="3" />
-        <setting label="32071" type="slider" id="exposedGenitalia" range="0,1,3" option="int" default="3" />
-        <setting label="32072" type="slider" id="fullNudity" range="0,1,3" option="int" default="3" />
-        <setting label="32073" type="slider" id="toplessness" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32074">
-        <setting label="32075" type="slider" id="sex" range="0,1,3" option="int" default="3" />
-        <setting label="32076" type="slider" id="adultery" range="0,1,3" option="int" default="3" />
-        <setting label="32077" type="slider" id="analSex" range="0,1,3" option="int" default="3" />
-        <setting label="32078" type="slider" id="coitus" range="0,1,3" option="int" default="3" />
-        <setting label="32079" type="slider" id="kissing" range="0,1,3" option="int" default="3" />
-        <setting label="32080" type="slider" id="masturbation" range="0,1,3" option="int" default="3" />
-        <setting label="32081" type="slider" id="objectification" range="0,1,3" option="int" default="3" />
-        <setting label="32082" type="slider" id="oralSex" range="0,1,3" option="int" default="3" />
-        <setting label="32083" type="slider" id="premaritalSex" range="0,1,3" option="int" default="3" />
-        <setting label="32084" type="slider" id="promiscuity" range="0,1,3" option="int" default="3" />
-        <setting label="32085" type="slider" id="prostitution" range="0,1,3" option="int" default="3" />
-    </category>
-    <category label="32086">
-        <setting label="32087" type="slider" id="violence" range="0,1,3" option="int" default="3" />
-        <setting label="32088" type="slider" id="choking" range="0,1,3" option="int" default="3" />
-        <setting label="32089" type="slider" id="crueltyToAnimals" range="0,1,3" option="int" default="3" />
-        <setting label="32090" type="slider" id="culturalViolence" range="0,1,3" option="int" default="3" />
-        <setting label="32091" type="slider" id="desecration" range="0,1,3" option="int" default="3" />
-        <setting label="32092" type="slider" id="emotionalViolence" range="0,1,3" option="int" default="3" />
-        <setting label="32093" type="slider" id="kicking" range="0,1,3" option="int" default="3" />
-        <setting label="32094" type="slider" id="massacre" range="0,1,3" option="int" default="3" />
-        <setting label="32095" type="slider" id="murder" range="0,1,3" option="int" default="3" />
-        <setting label="32096" type="slider" id="punching" range="0,1,3" option="int" default="3" />
-        <setting label="32097" type="slider" id="rape" range="0,1,3" option="int" default="3" />
-        <setting label="32098" type="slider" id="slapping" range="0,1,3" option="int" default="3" />
-        <setting label="32099" type="slider" id="slavery" range="0,1,3" option="int" default="3" />
-        <setting label="32100" type="slider" id="stabbing" range="0,1,3" option="int" default="3" />
-        <setting label="32101" type="slider" id="torture" range="0,1,3" option="int" default="3" />
-        <setting label="32102" type="slider" id="warfare" range="0,1,3" option="int" default="3" />
-        <setting label="32103" type="slider" id="weapons" range="0,1,3" option="int" default="3" />
-    </category>
+<?xml version="1.0" ?>
+<settings version="1">
+	<section id="script.movie.content.filter">
+		<category id="commercial content" label="32001" help="">
+			<group id="1">
+				<setting id="commercial" type="integer" label="32002" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="advertBreak" type="integer" label="32003" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="consumerism" type="integer" label="32004" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="productPlacement" type="integer" label="32005" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="discrimination" label="32006" help="">
+			<group id="1">
+				<setting id="discrimination" type="integer" label="32007" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="ableism" type="integer" label="32104" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="adultism" type="integer" label="32008" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="antisemitism" type="integer" label="32009" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="genderism" type="integer" label="32010" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="homophobia" type="integer" label="32011" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="misandry" type="integer" label="32012" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="misogyny" type="integer" label="32013" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="racism" type="integer" label="32014" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="sexism" type="integer" label="32015" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="sizeism" type="integer" label="32105" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="supremacism" type="integer" label="32016" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="transphobia" type="integer" label="32017" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="xenophobia" type="integer" label="32018" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="dispensable scenes" label="32019" help="">
+			<group id="1">
+				<setting id="dispensable" type="integer" label="32020" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="idiocy" type="integer" label="32021" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="tedious" type="integer" label="32022" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="drugs" label="32023" help="">
+			<group id="1">
+				<setting id="drugs" type="integer" label="32024" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="alcohol" type="integer" label="32025" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="antipsychotics" type="integer" label="32026" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="cigarettes" type="integer" label="32027" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="depressants" type="integer" label="32028" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="gambling" type="integer" label="32029" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="hallucinogens" type="integer" label="32030" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="stimulants" type="integer" label="32031" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="fear" label="32032" help="">
+			<group id="1">
+				<setting id="fear" type="integer" label="32033" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="accident" type="integer" label="32034" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="acrophobia" type="integer" label="32035" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="aliens" type="integer" label="32036" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="arachnophobia" type="integer" label="32037" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="astraphobia" type="integer" label="32038" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="aviophobia" type="integer" label="32039" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="chemophobia" type="integer" label="32040" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="claustrophobia" type="integer" label="32041" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="coulrophobia" type="integer" label="32042" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="cynophobia" type="integer" label="32043" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="death" type="integer" label="32044" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="dentophobia" type="integer" label="32045" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="emetophobia" type="integer" label="32046" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="enochlophobia" type="integer" label="32047" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="explosion" type="integer" label="32048" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="fire" type="integer" label="32049" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="gerascophobia" type="integer" label="32050" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="ghosts" type="integer" label="32051" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="graves" type="integer" label="32052" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="hemophobia" type="integer" label="32053" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="hylophobia" type="integer" label="32054" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="melissophobia" type="integer" label="32055" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="misophonia" type="integer" label="32056" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="musophobia" type="integer" label="32057" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="mysophobia" type="integer" label="32058" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="nosocomephobia" type="integer" label="32059" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="nyctophobia" type="integer" label="32060" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="siderodromophobia" type="integer" label="32061" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="thalassophobia" type="integer" label="32062" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="vampires" type="integer" label="32063" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="language" label="32064" help="">
+			<group id="1">
+				<setting id="language" type="integer" label="32065" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="blasphemy" type="integer" label="32066" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="nameCalling" type="integer" label="32067" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="sexualDialogue" type="integer" label="32068" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="swearing" type="integer" label="32069" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="vulgarity" type="integer" label="32070" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="nudity" label="32068" help="">
+			<group id="1">
+				<setting id="nudity" type="integer" label="32069" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="bareButtocks" type="integer" label="32070" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="exposedGenitalia" type="integer" label="32071" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="fullNudity" type="integer" label="32072" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="toplessness" type="integer" label="32073" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="sex" label="32074" help="">
+			<group id="1">
+				<setting id="sex" type="integer" label="32075" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="adultery" type="integer" label="32076" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="analSex" type="integer" label="32077" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="coitus" type="integer" label="32078" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="kissing" type="integer" label="32079" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="masturbation" type="integer" label="32080" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="objectification" type="integer" label="32081" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="oralSex" type="integer" label="32082" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="premaritalSex" type="integer" label="32083" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="promiscuity" type="integer" label="32084" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="prostitution" type="integer" label="32085" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+		<category id="violence" label="32086" help="">
+			<group id="1">
+				<setting id="violence" type="integer" label="32087" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="choking" type="integer" label="32088" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="crueltyToAnimals" type="integer" label="32089" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="culturalViolence" type="integer" label="32090" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="desecration" type="integer" label="32091" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="emotionalViolence" type="integer" label="32092" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="kicking" type="integer" label="32093" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="massacre" type="integer" label="32094" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="murder" type="integer" label="32095" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="punching" type="integer" label="32096" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="rape" type="integer" label="32097" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="slapping" type="integer" label="32098" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="slavery" type="integer" label="32099" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="stabbing" type="integer" label="32100" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="torture" type="integer" label="32101" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="warfare" type="integer" label="32102" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+				<setting id="weapons" type="integer" label="32103" help="">
+					<level>0</level>
+					<default>3</default>
+					<constraints>
+						<minimum>0</minimum>
+						<step>1</step>
+						<maximum>3</maximum>
+					</constraints>
+					<control type="slider" format="integer">
+						<popup>false</popup>
+					</control>
+				</setting>
+			</group>
+		</category>
+	</section>
 </settings>
