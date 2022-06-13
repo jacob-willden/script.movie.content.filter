@@ -6,6 +6,7 @@
 	<extension point="xbmc.service" library="addon.py">
 		<provides>executable</provides>
 	</extension>
+	<extension point="xbmc.python.script"></extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<license>GNU General Public License, version 3 or later</license>
