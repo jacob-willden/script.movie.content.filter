@@ -5,7 +5,7 @@ Movie Content Filter Kodi Add-on Project Copyright (C) 2021, 2022 Jacob Willden
 (Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
 
 VideoSkip Browser Extension Copyright (C) 2020, 2021, 2022 Francisco Ruiz
-(Released under the GNU General Public License (GNU GPL))
+(Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
 Link: https://github.com/fruiz500/VideoSkip-extension/
 
 LazyTV Kodi Add-on (C) 2013, 2014, 2015 KodeKarnage
