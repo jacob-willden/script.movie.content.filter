@@ -441,3 +441,7 @@ msgstr ""
 msgctxt "#32106"
 msgid "Notice: The performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture."
 msgstr ""
+
+msgctxt "#32107"
+msgid "Filters"
+msgstr ""
