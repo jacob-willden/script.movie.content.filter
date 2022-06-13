@@ -6,7 +6,7 @@ Project Source Code Link: https://github.com/jacob-willden/script.movie.content.
 Movie Content Filter Website: https://www.moviecontentfilter.com/
 
 ## General Information
-This project is in very early development right now, and there are many features to add (and some bugs to fix). It is built on the source code from the open-source VideoSkip browser extension (linked below). The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL).
+This project is in very early development right now, and there are many features to add (and some bugs to fix). It is built on the source code from the open-source VideoSkip browser extension (linked below). The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL), version 3 or later.
 
 VideoSkip Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
 
