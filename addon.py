@@ -222,7 +222,7 @@ if (__name__ == "__main__"):
             window_h = int(xbmc.getInfoLabel("System.ScreenHeight")) * 100
 
             #main window
-            self._background = xbmcgui.ControlImage(origin_x, origin_y, window_w, window_h, os.path.join(addonpath,"resources","skins","default","media","black-background.png"))
+            self._background = xbmcgui.ControlImage(origin_x, origin_y, window_w, window_h, os.path.join(addonpath,"resources","skins","default","media","black-background.jpg"))
 
         def show(self):
             if not self.showing:
