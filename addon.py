@@ -169,7 +169,7 @@ if (__name__ == "__main__"):
             window_h = int(xbmc.getInfoLabel("System.ScreenHeight")) * 4
 
             #main window
-            self._disclaimer = xbmcgui.ControlTextBox(origin_x, origin_y, window_w, window_h)
+            self._disclaimer = xbmcgui.ControlTextBox(origin_x, origin_y, window_w, window_h) # How to add shadow color?
             self._disclaimer.setText(ADDON.getLocalizedString(32106))
 
         def show(self):
@@ -302,6 +302,5 @@ if (__name__ == "__main__"):
             
 
 # To Do List:
-# Address inability to access settings for service add-on through main screens (use Version Check as an example)
 # Family Movie Act of 2005 notice (including black background behind text for readability and keeping the right Z-index, if needed, plus the right position and size)
-# Filtering editor (how to activate? keyboard shortcut?)
+# Filtering editor (activate/deactivate through add-on settings)

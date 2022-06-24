@@ -1,6 +1,15 @@
 <?xml version="1.0" ?>
 <settings version="1">
 	<section id="script.movie.content.filter">
+		<category id="editor" label="32108" help="">
+			<group id="1" label="32109" help="">
+				<setting id="editorActive" type="boolean" label="32110" help="">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
+			</group>
+		</category>
 		<category id="filters" label="32107" help="">
 			<group id="1" label="32001" help=""> <!-- Commercial content -->
 				<setting id="commercial" type="integer" label="32002" help="">

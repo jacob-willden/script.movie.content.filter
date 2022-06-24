@@ -445,3 +445,15 @@ msgstr ""
 msgctxt "#32107"
 msgid "Filters"
 msgstr ""
+
+msgctxt "#32108"
+msgid "Editor"
+msgstr ""
+
+msgctxt "#32109"
+msgid "Editor Options"
+msgstr ""
+
+msgctxt "#32110"
+msgid "Filter Editor Active?"
+msgstr ""
