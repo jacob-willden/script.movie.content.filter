@@ -266,12 +266,12 @@ if (__name__ == "__main__"):
                 break # Can't get any stronger, so stop looking for this time
             elif tempAction == "blank":
                 if action == "skip":
-                    action = action
+                    pass
                 else:
                     action = tempAction
             elif tempAction == "mute":
                 if action == "skip":
-                    action = action
+                    pass
                 else:
                     if action == "blank":
                         action = "skip"
