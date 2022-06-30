@@ -265,18 +265,13 @@ if (__name__ == "__main__"):
                 action = "skip"
                 break # Can't get any stronger, so stop looking for this time
             elif tempAction == "blank":
-                if action == "skip":
-                    pass
-                else:
+                if action != "skip":
                     action = tempAction
             elif tempAction == "mute":
-                if action == "skip":
-                    pass
+                if action == "blank":
+                    action = "skip"
                 else:
-                    if action == "blank":
-                        action = "skip"
-                    else:
-                        action = "mute"
+                    action = "mute"
             
         if action == prevAction:
             return prevAction
