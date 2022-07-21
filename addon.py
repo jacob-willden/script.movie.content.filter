@@ -202,12 +202,18 @@ if (__name__ == "__main__"):
         timer = threading.Timer(6.0, lambda: removeNotice(legalNotice))
         timer.start()
 
+    def checkForEditor():
+        if(ADDON.getSetting("editorActive") == "true"):
+            # Add editor window using code from script.testing2
+            pass
+
     class XBMCPlayer(xbmc.Player):
         def __init__(self, *args):
             pass
         def onAVChange(self):
             loadFilterFile()
             displayLegalNotice()
+            checkForEditor()
 
     player = XBMCPlayer()
 
