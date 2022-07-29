@@ -54,7 +54,7 @@ if (__name__ == "__main__"):
 
     # From "content2.js" from VideoSkip
     # hour:minute:second string to decimal seconds
-    def fromHMS(timeString):
+    def from_hms(timeString):
         timeString = timeString.replace(",", ".") # in .srt format decimal seconds use a comma
         time = timeString.split(":")
         if len(time) == 3: # has hours
@@ -64,7 +64,7 @@ if (__name__ == "__main__"):
         else: # only seconds
             return float(time[0])
 
-    def parseTagActionInfo(rawText): # 2 tags at the same time?
+    def parse_tag_action_info(rawText): # 2 tags at the same time?
         category = ""
         severity = ""
         action = ""
@@ -91,7 +91,7 @@ if (__name__ == "__main__"):
         return [category, severity, action]
 
 
-    def parseFilterFileText(fileText):
+    def parse_filter_file_text(fileText):
         # Modified from code by nqngo at Stack Overflow, used to separate timestamps in the filter file from the tag descriptions
         # https://stackoverflow.com/questions/23620423/parsing-a-srt-file-with-regex
         result = re.findall("(\d+:\d+:\d+.*\d* --> \d+:\d+:\d+.*\d*)\s+(.+)", fileText)
@@ -100,10 +100,10 @@ if (__name__ == "__main__"):
         for myTuple in result:
             currentCut = {}
             times = myTuple[0].split(" --> ")
-            currentCut["startTime"] = fromHMS(times[0])
-            currentCut["endTime"] = fromHMS(times[1])
+            currentCut["startTime"] = from_hms(times[0])
+            currentCut["endTime"] = from_hms(times[1])
 
-            actionInfo = parseTagActionInfo(myTuple[1])
+            actionInfo = parse_tag_action_info(myTuple[1])
             currentCut["category"] = actionInfo[0]
             currentCut["severity"] = actionInfo[1]
             currentCut["action"] = actionInfo[2]
@@ -113,7 +113,7 @@ if (__name__ == "__main__"):
         
     userSettings = {}
 
-    def updateUserSettings():
+    def update_user_settings():
         categoryIdList = ["commercial", "advertBreak", "consumerism", "productPlacement", "discrimination", "ableism", "adultism", "antisemitism", "genderism", "homophobia", "misandry", "misogyny", "racism", "sexism", "sizeism", "supremacism", "transphobia", "xenophobia", "dispensable", "idiocy", "tedious", "drugs", "alcohol", "antipsychotics", "cigarettes", "depressants", "gambling", "hallucinogens", "stimulants", "fear", "accident", "acrophobia", "aliens", "arachnophobia", "astraphobia", "aviophobia", "chemophobia", "claustrophobia", "coulrophobia", "cynophobia", "death", "dentophobia", "emetophobia", "enochlophobia", "explosion", "fire", "gerascophobia", "ghosts", "graves", "hemophobia", "hylophobia", "melissophobia", "misophonia", "musophobia", "mysophobia", "nosocomephobia", "nyctophobia", "siderodromophobia", "thalassophobia", "vampires", "language", "blasphemy", "nameCalling", "sexualDialogue", "swearing", "vulgarity", "nudity", "bareButtocks", "exposedGenitalia", "fullNudity", "toplessness", "sex", "adultery", "analSex", "coitus", "kissing", "masturbation", "objectification", "oralSex", "premaritalSex", "promiscuity", "prostitution", "violence", "choking", "crueltyToAnimals", "culturalViolence", "desecration", "emotionalViolence", "kicking", "massacre", "murder", "punching", "rape", "slapping", "slavery", "stabbing", "torture", "warfare", "weapons"]
         global userSettings
         userSettings = {}
@@ -121,29 +121,29 @@ if (__name__ == "__main__"):
             userSettings[category] = ADDON.getSetting(category)
 
     # Modified from isSkipped function from "content2.js" from VideoSkip
-    def isTagActive(tag, userSettings):
+    def is_tag_active(tag, userSettings):
         category = tag["category"]
         return int(tag["severity"]) + int(userSettings[category]) > 3
 
     activeCuts = []
 
     # Modified from isSkipped function from "content2.js" from VideoSkip
-    def applyFilters(allCuts, userSettings):
+    def apply_filters(allCuts, userSettings):
         global activeCuts
         activeCuts = []
         for cut in allCuts:
-            if isTagActive(cut, userSettings):
+            if is_tag_active(cut, userSettings):
                 activeCuts.append(cut)
 
-    def loadFilterFile():
+    def load_filter_file():
         try:
             filePath = xbmc.Player().getPlayingFile().rsplit(".", 1)[0] + ".mcf"
             fileInput = open(filePath, "r")
             fileText = fileInput.read()
-            allCuts = parseFilterFileText(fileText)
-            updateUserSettings()
+            allCuts = parse_filter_file_text(fileText)
+            update_user_settings()
             global userSettings
-            applyFilters(allCuts, userSettings)
+            apply_filters(allCuts, userSettings)
         except:
             print("Unable to find or process MCF file")
 
@@ -153,7 +153,7 @@ if (__name__ == "__main__"):
             xbmc.Monitor.__init__(self)
 
         def onSettingsChanged(self):
-            updateUserSettings()
+            update_user_settings()
 
     monitor = AppMonitor()
 
@@ -191,18 +191,18 @@ if (__name__ == "__main__"):
                 self.window.clearProperties()
             except: pass
 
-    def displayLegalNotice():
+    def display_legal_notice():
         if not "legalNotice" in locals():
             legalNotice = FamilyMovieActNotice()
         legalNotice.show()
 
-        def removeNotice(legalNotice):
+        def remove_notice(legalNotice):
             legalNotice.hide()
 
-        timer = threading.Timer(6.0, lambda: removeNotice(legalNotice))
+        timer = threading.Timer(6.0, lambda: remove_notice(legalNotice))
         timer.start()
 
-    def checkForEditor():
+    def check_for_editor():
         if(ADDON.getSetting("editorActive") == "true"):
             # Add editor window using code from script.testing2
             pass
@@ -211,9 +211,9 @@ if (__name__ == "__main__"):
         def __init__(self, *args):
             pass
         def onAVChange(self):
-            loadFilterFile()
-            displayLegalNotice()
-            checkForEditor()
+            load_filter_file()
+            display_legal_notice()
+            check_for_editor()
 
     player = XBMCPlayer()
 
@@ -253,7 +253,7 @@ if (__name__ == "__main__"):
     prevAction = ""
 
     # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def doTheFiltering(prevAction, activeCuts, blankScreen):
+    def do_the_filtering(prevAction, activeCuts, blankScreen):
         startTime = 0
         endTime = 0
         action = ""
@@ -299,7 +299,7 @@ if (__name__ == "__main__"):
         if xbmc.getCondVisibility("Player.HasMedia"):
             if not "blankScreen" in locals():
                 blankScreen = OverlayBlankScreen()
-            prevAction = doTheFiltering(prevAction, activeCuts, blankScreen)
+            prevAction = do_the_filtering(prevAction, activeCuts, blankScreen)
             
 
 # To Do List:
