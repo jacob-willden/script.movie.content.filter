@@ -6,14 +6,14 @@
 
 Kodi add-on for Movie Content Filter, to allow users to skip objectionable content on streaming services, based on their preferences.
 
-Project Source Code Link: https://github.com/jacob-willden/script.movie.content.filter/
+[Project Source Code Link](https://github.com/jacob-willden/script.movie.content.filter/)
 
-Movie Content Filter Website: https://www.moviecontentfilter.com/
+[Movie Content Filter Website](https://www.moviecontentfilter.com/)
 
 ## General Information
 This project is in very early development right now, and there are many features to add (and some bugs to fix). It is built on the source code from the open-source VideoSkip browser extension (linked below). The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL), version 3 or later.
 
-VideoSkip Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
+[VideoSkip Source Code Link](https://github.com/fruiz500/VideoSkip-extension/)
 
 ## Installation Instructions
 
