@@ -208,8 +208,6 @@ if (__name__ == "__main__"):
             pass
 
     class XBMCPlayer(xbmc.Player):
-        def __init__(self, *args):
-            pass
         def onAVChange(self):
             load_filter_file()
             display_legal_notice()
