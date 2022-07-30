@@ -185,15 +185,13 @@ if (__name__ == "__main__"):
         def _close(self):
             if self.showing:
                 self.hide()
-            else:
-                pass
             try:
                 self.window.clearProperties()
             except:
                 print("Movie Content Filter Add-on: Couldn't clear legal notice window properties")
 
     def display_legal_notice():
-        if not "legalNotice" in locals():
+        if "legalNotice" not in locals():
             legalNotice = FamilyMovieActNotice()
         legalNotice.show()
 
@@ -242,8 +240,6 @@ if (__name__ == "__main__"):
         def _close(self):
             if self.showing:
                 self.hide()
-            else:
-                pass
             try:
                 self.window.clearProperties()
                 #print("OverlayBlankScreen window closed")
@@ -297,7 +293,7 @@ if (__name__ == "__main__"):
         if monitor.waitForAbort(0.01):
             break
         if xbmc.getCondVisibility("Player.HasMedia"):
-            if not "blankScreen" in locals():
+            if "blankScreen" not in locals():
                 blankScreen = OverlayBlankScreen()
             prevAction = do_the_filtering(prevAction, activeCuts, blankScreen)
             
