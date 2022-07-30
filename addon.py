@@ -250,8 +250,8 @@ if (__name__ == "__main__"):
 
     prevAction = ""
 
-    # Determines which filter tags should be active at a certain time, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def get_action(activeCuts):
+    # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
+    def do_the_filtering(prevAction, activeCuts, blankScreen):
         startTime = 0
         endTime = 0
         action = ""
@@ -276,11 +276,7 @@ if (__name__ == "__main__"):
                     action = "skip"
                 else:
                     action = "mute"
-        return action
-
-    # Execute filters during playback, derived and modified from anonymous function in "content1.js" from VideoSkip (version 0.4.1), originally "content2.js"
-    def do_the_filtering(prevAction, activeCuts, blankScreen):
-        action = get_action(activeCuts)
+            
         if action == prevAction:
             return prevAction
         elif action == "skip":
