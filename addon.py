@@ -189,7 +189,8 @@ if (__name__ == "__main__"):
                 pass
             try:
                 self.window.clearProperties()
-            except: pass
+            except:
+                print("Movie Content Filter Add-on: Couldn't clear legal notice window properties")
 
     def display_legal_notice():
         if not "legalNotice" in locals():
@@ -246,7 +247,8 @@ if (__name__ == "__main__"):
             try:
                 self.window.clearProperties()
                 #print("OverlayBlankScreen window closed")
-            except: pass
+            except:
+                print("Movie Content Filter Add-on: Couldn't clear video hiding window properties")
 
     prevAction = ""
 
