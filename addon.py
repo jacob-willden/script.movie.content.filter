@@ -144,8 +144,10 @@ if (__name__ == "__main__"):
             update_user_settings()
             global userSettings
             apply_filters(allCuts, userSettings)
-        except:
-            print("Unable to find or process MCF file")
+        except OSError:
+            print("Movie Content Filter Add-on: Unable to find or open MCF file")
+            global activeCuts
+            activeCuts = [] # To prevent the current video from using the cuts from the previous video that had cuts
 
     # Modified from the LazyMonitor class from "service.py" from LazyTV
     class AppMonitor(xbmc.Monitor):
@@ -185,10 +187,7 @@ if (__name__ == "__main__"):
         def _close(self):
             if self.showing:
                 self.hide()
-            try:
-                self.window.clearProperties()
-            except:
-                print("Movie Content Filter Add-on: Couldn't clear legal notice window properties")
+            self.window.clearProperties()
 
     def display_legal_notice():
         if "legalNotice" not in locals():
@@ -197,6 +196,7 @@ if (__name__ == "__main__"):
 
         def remove_notice(legalNotice):
             legalNotice.hide()
+            legalNotice._close()
 
         timer = threading.Timer(6.0, lambda: remove_notice(legalNotice))
         timer.start()
@@ -240,11 +240,8 @@ if (__name__ == "__main__"):
         def _close(self):
             if self.showing:
                 self.hide()
-            try:
-                self.window.clearProperties()
-                #print("OverlayBlankScreen window closed")
-            except:
-                print("Movie Content Filter Add-on: Couldn't clear video hiding window properties")
+            self.window.clearProperties()
+            #print("OverlayBlankScreen window closed")
 
     prevAction = ""
 
@@ -296,6 +293,8 @@ if (__name__ == "__main__"):
             if "blankScreen" not in locals():
                 blankScreen = OverlayBlankScreen()
             prevAction = do_the_filtering(prevAction, activeCuts, blankScreen)
+
+    blankScreen._close()
             
 
 # To Do List:
