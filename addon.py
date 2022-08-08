@@ -3,21 +3,29 @@ This file is part of the Movie Content Filter Kodi Add-on Project.
 
 Movie Content Filter Kodi Add-on Project Copyright (C) 2021, 2022 Jacob Willden
 (Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
+Source Code Link: https://github.com/jacob-willden/script.movie.content.filter
 
 VideoSkip Browser Extension Copyright (C) 2020, 2021, 2022 Francisco Ruiz
 (Released under the GNU General Public License (GNU GPL) Version 3.0 or later)
-Link: https://github.com/fruiz500/VideoSkip-extension/
+Source Code Link: https://github.com/fruiz500/VideoSkip-extension/
+
+PyXBMCt Kodi Add-on Copyright (C) 2020 Roman Miroshnychenko
+(Released under the GNU General Public License (GNU GPL) Version 3.0, allowed 
+to be combined with any GPL-compatible code, according to the following thread 
+on the Kodi forums: https://forum.kodi.tv/showthread.php?tid=369176)
+Source Code Link: https://github.com/romanvm/script.module.pyxbmct
 
 LazyTV Kodi Add-on (C) 2013, 2014, 2015 KodeKarnage
 (Released under the GNU General Public License (GNU GPL) Version 2.0 or later)
-Link: https://github.com/KODeKarnage/script.lazytv
+Source Code Link: https://github.com/KODeKarnage/script.lazytv
 
 Most of the code below was derived and modified from several source 
 code files in the VideoSkip browser extension repository (source 
 link above), including "content1.js" and "content2.js", and it is 
 explicitly labled as so. One snippet of code below is derived from 
 the file "service.py" in the LazyTV Kodi Add-on, also explicitly 
-labeled as so.
+labeled as so. Some of the code below depends on the PyXBMCt add-on,
+indicated by comments.
 
 Afformentioned source code derived and modified by Jacob Willden
 Start Date of Derivation/Modification: November 20, 2020
@@ -44,7 +52,7 @@ You should have recieved a copy of the GNU General Public License
 along with this project. Otherwise, see: https://www.gnu.org/licenses/
 """
 
-import xbmc, xbmcaddon, xbmcgui, os, re, threading
+import xbmc, xbmcaddon, xbmcgui, os, re, threading, pyxbmct
 
 ADDON = xbmcaddon.Addon()
 addonpath = ADDON.getAddonInfo("path")
@@ -203,7 +211,7 @@ if (__name__ == "__main__"):
 
     def check_for_editor():
         if(ADDON.getSetting("editorActive") == "true"):
-            # Add editor window using code from script.testing2
+            # Add editor window
             pass
 
     class XBMCPlayer(xbmc.Player):
