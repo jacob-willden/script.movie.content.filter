@@ -49,7 +49,7 @@ Categories for filters can be found in the [Movie Content Filter specifications]
 
 ## Legal
 
-The add-on does not alter video files at all, but instead lets "users choose to see or not to see parts of the content, and the app remembers their choice" (quoted from the [Read Me file for the VideoSkip extension](https://github.com/fruiz500/VideoSkip-extension/blob/master/README.md), which extension's code this add-on is built on). It also does not enable unauthorized access to video files.
+The add-on does not alter video files at all, but instead lets "users choose to see or not to see parts of the content, and the [add-on] remembers their choice" (quoted from the [Read Me file for the VideoSkip extension](https://github.com/fruiz500/VideoSkip-extension/blob/master/README.md), which extension's code this add-on is built on). It also does not enable unauthorized access to video files.
 
 The video content that our add-on can filter belongs to its respective copyright holders. We claim no affliation or endorsement from any of these copyright holders.
 
