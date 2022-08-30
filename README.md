@@ -4,7 +4,7 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=jacob-willden_script.movie.content.filter&metric=bugs)](https://sonarcloud.io/summary/new_code?id=jacob-willden_script.movie.content.filter)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=jacob-willden_script.movie.content.filter&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=jacob-willden_script.movie.content.filter)
 
-Kodi add-on for Movie Content Filter, to allow users to skip objectionable content on streaming services, based on their preferences.
+Kodi add-on for Movie Content Filter, to allow users to skip objectionable content in videos, based on their preferences.
 
 [Project Source Code Link](https://github.com/jacob-willden/script.movie.content.filter/)
 
