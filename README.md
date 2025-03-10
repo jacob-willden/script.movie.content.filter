@@ -50,3 +50,5 @@ The add-on does not alter video files at all, but instead lets "users choose to 
 The video content that our add-on can filter belongs to its respective copyright holders. We claim no affliation or endorsement from any of these copyright holders.
 
 Notice to All Users: When watching a motion picture (referring to a movie, television show, etc) using this add-on, the performance of the motion picture is altered from the performance intended by the director or copyright holder of the motion picture.
+
+`SPDX-License-Identifier: GPL-3.0-or-later`
