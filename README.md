@@ -1,8 +1,8 @@
 # script.movie.content.filter
 
-Kodi add-on for Movie Content Filter, to allow users to skip objectionable content in videos, based on their preferences.
+GitHub mirror for the Kodi add-on for Movie Content Filter, to allow users to skip objectionable content in videos, based on their preferences.
 
-[Project Source Code Link](https://github.com/jacob-willden/script.movie.content.filter/)
+[Project Source Code](https://codeberg.org/jacobwillden/script.movie.content.filter)
 
 [Movie Content Filter Website](https://www.moviecontentfilter.com/)
 
