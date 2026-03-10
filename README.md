@@ -7,7 +7,9 @@ GitHub mirror for the Kodi add-on for Movie Content Filter, to allow users to sk
 [Movie Content Filter Website](https://www.moviecontentfilter.com/)
 
 ## General Information
-This project is in very early development right now, and there are many features to add (and some bugs to fix). It is built on the source code from the open-source VideoSkip browser extension (linked below). The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL), version 3 or later.
+This project is in very early development right now, and there are many features to add (and some bugs to fix). It is primarily built on the source code from the open-source VideoSkip browser extension (linked below), with 1 line of code modified  The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL), version 3 or later.
+
+Some of the source code was derived from the [VideoSkip extension project by Francisco Ruiz](https://github.com/fruiz500/VideoSkip-extension/), and 1 line of the source code was derived from the user "nqngo" on [StackOverflow](https://stackoverflow.com/). The latter (being posted between 2011 and 2018) is released under the [Creative Commons Attribution Share-Alike 3.0](https://creativecommons.org/licenses/by-sa/3.0/), which is made compatible with the GPL version 3 or later by [upgrading the license to verison 4.0](https://meta.stackoverflow.com/questions/271293/use-stack-overflow-answer-in-gpl-software-how-to-ask-for-permission) and [specifying Creative Commons as my proxy](https://www.gnu.org/licenses/license-list.html#ccbysa).
 
 [VideoSkip Source Code Link](https://github.com/fruiz500/VideoSkip-extension/)
 
