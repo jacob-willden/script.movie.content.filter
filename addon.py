@@ -29,7 +29,7 @@ indicated by comments.
 
 One part of the code below is provided by nqngo from StackOverflow,
 and is explicitly stated as so. Such code is released under the
-Creative Commons Attribution Share-Alike 4.0 (CC BY-SA 4.0). I
+Creative Commons Attribution Share-Alike 3.0 (CC BY-SA 3.0). I
 specify Creative Commons as my proxy to make the contributions
 from StackOverflow compatible with future versions of the GPL.
 
