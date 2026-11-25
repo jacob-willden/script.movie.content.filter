@@ -2,9 +2,11 @@
 
 GitHub mirror for the Kodi add-on for Movie Content Filter, to allow users to skip objectionable content in videos, based on their preferences.
 
-[Project Source Code](https://codeberg.org/jacobwillden/script.movie.content.filter)
-
 [Movie Content Filter Website](https://www.moviecontentfilter.com/)
+
+Note: This repository will continue to be [available on Codeberg](https://codeberg.org/jacobwillden/script.movie.content.filter) after I delete my GitHub account. However, it may soon become redundant if I'm able to figure out how to add video hiding to edit decision list (EDL) functionality in Kodi itself, since EDL muting and skipping is already natively supported in Kodi.
+
+[Project Source Code]()
 
 ## General Information
 This project is in very early development right now, and there are many features to add (and some bugs to fix). It is primarily built on the source code from the open-source VideoSkip browser extension (linked below), with 1 line of code modified  The source code is freely available to copy and build on, released under the GNU General Public License (GNU GPL), version 3 or later.
